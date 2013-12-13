@@ -4,7 +4,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
 
-import com.vivalux.sbt.common.block.SBTBlocks;
+import com.vivalux.sbt.block.SBTBlocks;
+import com.vivalux.sbt.lib.SBT_OreDictionary;
 import com.vivalux.sbt.lib.SBT_Ref;
 import com.vivalux.sbt.proxy.CommonSBTProxy;
 
@@ -49,7 +50,12 @@ public class Subterrania_ModBase {
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent e) {
-	// used for working with other mods
+	SBT_OreDictionary.setOres();
+	for(ItemStack stack : SBT_OreDictionary.ores){
+	    
+	    System.out.println(stack.toString());
+	    
+	}
     }
 
     private static void setCreativeTab() {

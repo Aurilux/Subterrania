@@ -1,4 +1,4 @@
-package com.vivalux.sbt.common.block;
+package com.vivalux.sbt.block;
 
 import com.vivalux.sbt.Subterrania_ModBase;
 
