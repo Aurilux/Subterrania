@@ -20,11 +20,7 @@ public class SBT_Blocks {
     public static BlockMoss moss;
     public static final String MOSS_NAME = "Lichen";
     public static final String MOSS_NAME_LOWER = "moss";
-
-    public static BlockRock rock; // Stalagmites and stalactites. Can we generate stalagmites and stalactites as groups of stone blocks instead of using their own block?
-    public static final String ROCK_NAME = "Cave Rock";
-    public static final String ROCK_NAME_LOWER = "rock";
-
+    
     public static int blockID = 1000;
 
     public static int getNewID() {
@@ -51,11 +47,6 @@ public class SBT_Blocks {
 		Configuration.CATEGORY_BLOCK, MOSS_NAME_LOWER, blockID + 2)
 		.getInt());
 	addBlock(moss, MOSS_NAME_LOWER, MOSS_NAME);
-
-	rock = new BlockRock(Subterrania_ModBase.config.get(
-		Configuration.CATEGORY_BLOCK, ROCK_NAME_LOWER, blockID + 3)
-		.getInt());
-	addBlock(rock, ROCK_NAME_LOWER, ROCK_NAME);
 
 	Subterrania_ModBase.config.save();
 
