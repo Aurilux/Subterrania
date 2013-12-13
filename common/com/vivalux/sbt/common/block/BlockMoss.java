@@ -1,6 +1,5 @@
 package com.vivalux.sbt.common.block;
 
-import com.vivalux.sbt.SBTBlocks;
 import com.vivalux.sbt.Subterrania_ModBase;
 import com.vivalux.sbt.lib.SBT_Ref;
 
@@ -15,12 +14,13 @@ public class BlockMoss extends BlockVine {
 	super(par1);
 	setCreativeTab(Subterrania_ModBase.tab);
     }
-    
-    @Override 
-    public void registerIcons(IconRegister reg){
-	
-	this.blockIcon = reg.registerIcon(SBT_Ref.TEXTURE_PREFIX + SBTBlocks.MOSS_NAME_LOWER);
-	
+
+    @Override
+    public void registerIcons(IconRegister reg) {
+
+	this.blockIcon = reg.registerIcon(SBT_Ref.TEXTURE_PREFIX
+		+ SBTBlocks.MOSS_NAME_LOWER);
+
     }
 
 }
