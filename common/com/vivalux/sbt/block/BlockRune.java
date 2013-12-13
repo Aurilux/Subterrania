@@ -17,7 +17,7 @@ public class BlockRune extends Block {
     public void registerIcons(IconRegister reg) {
 
 	this.blockIcon = reg.registerIcon(SBT_Ref.TEXTURE_PREFIX
-		+ SBTBlocks.RUNE_NAME_LOWER);
+		+ SBT_Blocks.RUNE_NAME_LOWER);
 
     }
 

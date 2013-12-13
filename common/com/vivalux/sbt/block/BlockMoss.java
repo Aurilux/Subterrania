@@ -19,7 +19,7 @@ public class BlockMoss extends BlockVine {
     public void registerIcons(IconRegister reg) {
 
 	this.blockIcon = reg.registerIcon(SBT_Ref.TEXTURE_PREFIX
-		+ SBTBlocks.MOSS_NAME_LOWER);
+		+ SBT_Blocks.MOSS_NAME_LOWER);
 
     }
 

@@ -20,7 +20,7 @@ public class BlockGlowingMushroom extends BlockMushroom {
     public void registerIcons(IconRegister reg) {
 
 	this.blockIcon = reg.registerIcon(SBT_Ref.TEXTURE_PREFIX
-		+ SBTBlocks.MUSHROOM_NAME_LOWER);
+		+ SBT_Blocks.MUSHROOM_NAME_LOWER);
 
     }
 
