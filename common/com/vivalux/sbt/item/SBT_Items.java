@@ -14,6 +14,10 @@ public class SBT_Items {
     public static final String MOSS_NAME = "Cooked " + SBT_Blocks.MOSS_NAME;
     public static final String MOSS_NAME_LOWER = "cookedMoss";
     
+    public static ItemCrystal crystal;
+    public static final String CRYSTAL_NAME = "Ambient Crystal";
+    public static final String CRYSTAL_NAME_LOWER = "crystal";
+    
     public static int itemID = 700;
     
     private static int getNewID(){
@@ -28,6 +32,9 @@ public class SBT_Items {
 	
 	cookedMoss = new ItemCookedMoss(Subterrania_ModBase.config.get(Configuration.CATEGORY_ITEM, MOSS_NAME_LOWER, getNewID()).getInt());
 	addItem(cookedMoss, MOSS_NAME_LOWER, MOSS_NAME);
+	
+	crystal = new ItemCrystal(Subterrania_ModBase.config.get(Configuration.CATEGORY_ITEM, CRYSTAL_NAME_LOWER, getNewID()).getInt());
+	addItem(crystal, CRYSTAL_NAME_LOWER, CRYSTAL_NAME);
 	
 	Subterrania_ModBase.config.save();
 	
