@@ -29,7 +29,7 @@ public class SecretGarden extends WorldGenerator {
 		//then determine if the location is applicable
 		int caveTop = y + dimY;
 		//make sure we are in a cold biome, a few blocks below sea level (64), but not too far below ground
-		if (world.getBiomeGenForCoords(x, z).temperature < .3f && (caveTop < 54 && caveTop > 44)) {
+		if (world.getBiomeGenForCoords(x, z).temperature < .3f && (caveTop < 59 && caveTop > 44)) {
 			
 			//generate the overall shape of the cave, adding dirt to the bottom 1-2 layers
 			
