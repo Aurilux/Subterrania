@@ -1,19 +1,21 @@
 package com.vivalux.sbt.item;
 
+import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.item.Item;
+import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.item.ItemTool;
 
 import com.vivalux.sbt.Subterrania_ModBase;
+import com.vivalux.sbt.block.SBT_Blocks;
 import com.vivalux.sbt.lib.SBT_Ref;
 
-public class ItemCrystal extends Item {
+public class ItemChisel extends ItemTool {
 
     String name;
 
-    public ItemCrystal(int par1, String name) {
-	super(par1);
+    public ItemChisel(int par1, String name) {
+	super(par1, 1f, EnumToolMaterial.WOOD, new Block[] { SBT_Blocks.rune });
 	setCreativeTab(Subterrania_ModBase.tab);
-	setUnlocalizedName(name);
 	this.name = name;
     }
 

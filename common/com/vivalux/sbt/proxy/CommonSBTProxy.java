@@ -22,10 +22,10 @@ public class CommonSBTProxy implements IGuiHandler {
 	    int x, int y, int z) {
 	return null;
     }
-    
-    public Minecraft getMCInstance(){
-	
+
+    public Minecraft getMCInstance() {
+
 	return null;
-	
+
     }
 }

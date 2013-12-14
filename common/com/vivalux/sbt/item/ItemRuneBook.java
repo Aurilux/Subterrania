@@ -1,19 +1,19 @@
 package com.vivalux.sbt.item;
 
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.item.Item;
-
 import com.vivalux.sbt.Subterrania_ModBase;
 import com.vivalux.sbt.lib.SBT_Ref;
 
-public class ItemCrystal extends Item {
+import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.item.ItemBook;
+
+public class ItemRuneBook extends ItemBook {
 
     String name;
 
-    public ItemCrystal(int par1, String name) {
+    public ItemRuneBook(int par1, String name) {
 	super(par1);
-	setCreativeTab(Subterrania_ModBase.tab);
 	setUnlocalizedName(name);
+	setCreativeTab(Subterrania_ModBase.tab);
 	this.name = name;
     }
 
