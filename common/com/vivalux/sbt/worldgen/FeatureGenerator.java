@@ -41,7 +41,7 @@ public class FeatureGenerator implements IWorldGenerator {
 		secretGarden.generate(world, random, randX, randY, randZ);
 	
 		// Mushroom Cave generation
-		mushroomCave.generate(world, random, randX, randY, randZ);
+		//mushroomCave.generate(world, random, randX, randY, randZ);
 	
 		// Magma Chamber generation
 		magmaChamber.generate(world, random, randX, randY, randZ);

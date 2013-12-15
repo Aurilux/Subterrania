@@ -112,8 +112,8 @@ public class SecretGarden extends WorldGenerator {
 								&& world.isAirBlock(length, height, width) //is the current block air?
 								&& world.getBlockMaterial(length, height - 1, width).isSolid()
 								&& world.getBlockId(length, height - 1, width) == Block.grass.blockID) { //is the block below solid?
-							int plant = random.nextInt(4);
-							switch(plant) {
+							int plantChance = random.nextInt(4);
+							switch(plantChance) {
 							case 0: //spawn trees and vines
 								int maxTreeHeight = 2 + random.nextInt(3);
 								for (int i = 0; i < maxTreeHeight; i++) {
@@ -127,29 +127,6 @@ public class SecretGarden extends WorldGenerator {
 														//this ensures the leaves on the top sides aren't placed
 														if (!(j == 1 && Math.abs(k) != Math.abs(l))) {
 															world.setBlock(length + k, height + j + i, width + l, Block.leaves.blockID, 3, 2);
-															//spawn vines
-															int vine = random.nextInt(16);
-															if (vine >= 12) {
-																if (vine == 12
-																		&& world.isAirBlock(length + k + 1, height + j + i, width + l)) {
-																	world.setBlock(length + k + 1, height + j + i, width + l, Block.vine.blockID, 0, 2);
-																}
-																if (vine == 13
-																		&& world.isAirBlock(length + k - 1, height + j + i, width + l)) {
-																	world.setBlock(length + k - 1, height + j + i, width + l, Block.vine.blockID, 0, 2);
-																	
-																}
-																if (vine == 14
-																		&& world.isAirBlock(length + k, height + j + i, width + l + 1)) {
-																	world.setBlock(length + k, height + j + i, width + l + 1, Block.vine.blockID, 0, 2);
-																	
-																}
-																if (vine == 15
-																		&& world.isAirBlock(length + k, height + j + i, width + l - 1)) {
-																	world.setBlock(length + k, height + j + i, width + l - 1, Block.vine.blockID, 0, 2);
-																	
-																}
-															}
 														}
 													}
 												}
