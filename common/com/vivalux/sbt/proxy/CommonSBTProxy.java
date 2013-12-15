@@ -26,6 +26,5 @@ public class CommonSBTProxy implements IGuiHandler {
     public Minecraft getMCInstance(){
 	
 	return null;
-	
     }
 }

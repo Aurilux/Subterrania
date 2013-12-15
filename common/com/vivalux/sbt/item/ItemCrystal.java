@@ -8,16 +8,20 @@ import com.vivalux.sbt.lib.SBT_Ref;
 
 public class ItemCrystal extends Item {
 
-    public ItemCrystal(int par1) {
+    String name;
+
+    public ItemCrystal(int par1, String name) {
 	super(par1);
 	setCreativeTab(Subterrania_ModBase.tab);
+	setUnlocalizedName(name);
+	this.name = name;
     }
-    
+
     @Override
-    public void registerIcons(IconRegister reg){
-	
-	this.itemIcon = reg.registerIcon(SBT_Ref.TEXTURE_PREFIX + SBT_Items.CRYSTAL_NAME_LOWER);
-	
+    public void registerIcons(IconRegister reg) {
+
+	this.itemIcon = reg.registerIcon(SBT_Ref.TEXTURE_PREFIX + name);
+
     }
 
 }

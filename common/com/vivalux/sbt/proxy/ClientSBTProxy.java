@@ -10,9 +10,6 @@ public class ClientSBTProxy extends CommonSBTProxy {
     
     @Override
     public Minecraft getMCInstance(){
-	
 	return FMLClientHandler.instance().getClient();
-	
     }
-    
 }

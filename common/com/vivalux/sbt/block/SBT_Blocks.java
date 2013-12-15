@@ -10,7 +10,10 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class SBT_Blocks {
 
     public static BlockGlowingMushroom mushroom;
-    public static final String MUSHROOM_NAME = "Foxfire Fungus"; // I looked up "glowing mushroom" and found this name.
+    public static final String MUSHROOM_NAME = "Foxfire Fungus"; // I looked up
+								 // "glowing mushroom"
+								 // and found
+								 // this name.
     public static final String MUSHROOM_NAME_LOWER = "glowingMushroom";
 
     public static BlockRune rune;
@@ -20,7 +23,7 @@ public class SBT_Blocks {
     public static BlockMoss moss;
     public static final String MOSS_NAME = "Lichen";
     public static final String MOSS_NAME_LOWER = "moss";
-    
+
     public static int blockID = 1000;
 
     public static int getNewID() {
@@ -29,26 +32,24 @@ public class SBT_Blocks {
 
     }
 
-    public static void registerBlocks() {
+    public static void registerBlocks(Configuration config) {
 
-	Subterrania_ModBase.config.load();
+	config.load();
 
-	mushroom = new BlockGlowingMushroom(Subterrania_ModBase.config.get(
+	mushroom = new BlockGlowingMushroom(config.get(
 		Configuration.CATEGORY_BLOCK, MUSHROOM_NAME_LOWER, blockID)
-		.getInt());
+		.getInt(), MUSHROOM_NAME_LOWER);
 	addBlock(mushroom, MUSHROOM_NAME_LOWER, MUSHROOM_NAME);
 
-	rune = new BlockRune(Subterrania_ModBase.config.get(
-		Configuration.CATEGORY_BLOCK, RUNE_NAME_LOWER, blockID + 1)
-		.getInt());
+	rune = new BlockRune(config.get(Configuration.CATEGORY_BLOCK,
+		RUNE_NAME_LOWER, blockID + 1).getInt(), RUNE_NAME_LOWER);
 	addBlock(rune, RUNE_NAME_LOWER, RUNE_NAME);
 
-	moss = new BlockMoss(Subterrania_ModBase.config.get(
-		Configuration.CATEGORY_BLOCK, MOSS_NAME_LOWER, blockID + 2)
-		.getInt());
+	moss = new BlockMoss(config.get(Configuration.CATEGORY_BLOCK,
+		MOSS_NAME_LOWER, blockID + 2).getInt(), MOSS_NAME_LOWER);
 	addBlock(moss, MOSS_NAME_LOWER, MOSS_NAME);
 
-	Subterrania_ModBase.config.save();
+	config.save();
 
     }
 
