@@ -4,8 +4,11 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
 
-import com.vivalux.sbt.block.SBTBlocks;
+import com.vivalux.sbt.block.SBT_Blocks;
+import com.vivalux.sbt.item.SBT_Items;
+import com.vivalux.sbt.lib.Log;
 import com.vivalux.sbt.lib.SBT_OreDictionary;
+import com.vivalux.sbt.lib.SBT_Recipes;
 import com.vivalux.sbt.lib.SBT_Ref;
 import com.vivalux.sbt.proxy.CommonSBTProxy;
 
@@ -39,7 +42,11 @@ public class Subterrania_ModBase {
 	// register biomes, dimensions, and other world-gen
 	config = new Configuration(e.getSuggestedConfigurationFile());
 	setCreativeTab();
-	SBTBlocks.registerBlocks();
+	SBT_Blocks.registerBlocks(config);
+	SBT_Items.registerItems(config);
+	SBT_Recipes.registerRecipes();
+
+	// I KEEP RUNNING THE WRONG MOD GRRRRRRRRR!!!!!!!!
     }
 
     @EventHandler
@@ -51,10 +58,10 @@ public class Subterrania_ModBase {
     @EventHandler
     public void postInit(FMLPostInitializationEvent e) {
 	SBT_OreDictionary.setOres();
-	for(ItemStack stack : SBT_OreDictionary.ores){
-	    
+	for (ItemStack stack : SBT_OreDictionary.ores) {
+
 	    System.out.println(stack.toString());
-	    
+
 	}
     }
 
@@ -64,7 +71,7 @@ public class Subterrania_ModBase {
 
 	    @Override
 	    public ItemStack getIconItemStack() {
-		return new ItemStack(SBTBlocks.mushroom);
+		return new ItemStack(SBT_Blocks.mushroom);
 	    }
 
 	};

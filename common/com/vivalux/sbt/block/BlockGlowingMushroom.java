@@ -9,18 +9,21 @@ import net.minecraft.client.renderer.texture.IconRegister;
 
 public class BlockGlowingMushroom extends BlockMushroom {
 
-    public BlockGlowingMushroom(int ID) {
+    String name;
+
+    public BlockGlowingMushroom(int ID, String name) {
 
 	super(ID);
 	setCreativeTab(Subterrania_ModBase.tab);
+	setUnlocalizedName(name);
 	setLightValue(0.7f);
+	this.name = name;
     }
 
     @Override
     public void registerIcons(IconRegister reg) {
 
-	this.blockIcon = reg.registerIcon(SBT_Ref.TEXTURE_PREFIX
-		+ SBTBlocks.MUSHROOM_NAME_LOWER);
+	this.blockIcon = reg.registerIcon(SBT_Ref.TEXTURE_PREFIX + name);
 
     }
 

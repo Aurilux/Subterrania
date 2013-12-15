@@ -4,44 +4,46 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import cpw.mods.fml.client.FMLClientHandler;
+import cpw.mods.fml.common.FMLLog;
 
 public class Log {
-    
-    private Logger logger;
-    
-    private void init(){
-	
-	if(logger == null){
-	
-	    this.logger = FMLClientHandler.instance().getMinecraftLogger();
-	    
+
+    private static Logger logger;
+
+    private static void init() {
+
+	if (logger == null) {
+
+	    logger = FMLLog.getLogger();
+	    ;
+
 	}
-	
+
     }
-    
-    private void log(Level level, String text){
-	
-	this.init();
-	this.logger.log(level, "{" + SBT_Ref.MOD_ID + "} " + text);
-	
+
+    private static void log(Level level, String text) {
+
+	init();
+	logger.log(level, "{" + SBT_Ref.MOD_ID + "} " + text);
+
     }
-    
-    public void info(String text){
-	
-	this.log(Level.INFO, text);
-	
+
+    public static void info(String text) {
+
+	log(Level.INFO, text);
+
     }
-    
-    public void severe(String text){
-	
-	this.log(Level.SEVERE, text);
-	
+
+    public static void severe(String text) {
+
+	log(Level.SEVERE, text);
+
     }
-    
-    public void debug(String text){
-	
-	this.log(Level.INFO, "DEBUG: " + text);
-	
+
+    public static void debug(String text) {
+
+	log(Level.INFO, "DEBUG: " + text);
+
     }
 
 }

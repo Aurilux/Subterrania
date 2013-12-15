@@ -10,16 +10,19 @@ import net.minecraft.client.renderer.texture.IconRegister;
 
 public class BlockMoss extends BlockVine {
 
-    public BlockMoss(int par1) {
+    String name;
+
+    public BlockMoss(int par1, String name) {
 	super(par1);
 	setCreativeTab(Subterrania_ModBase.tab);
+	setUnlocalizedName(name);
+	this.name = name;
     }
 
     @Override
     public void registerIcons(IconRegister reg) {
 
-	this.blockIcon = reg.registerIcon(SBT_Ref.TEXTURE_PREFIX
-		+ SBTBlocks.MOSS_NAME_LOWER);
+	this.blockIcon = reg.registerIcon(SBT_Ref.TEXTURE_PREFIX + name);
 
     }
 
