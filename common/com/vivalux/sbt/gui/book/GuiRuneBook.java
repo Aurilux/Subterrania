@@ -89,7 +89,11 @@ public class GuiRuneBook extends GuiScreen {
             this.fontRenderer.drawSplitString(s1, k + 36, b0 + 16 + 16, 116, 0);
             
             this.fontRenderer.drawSplitString(this.pages[currPage].text[0], k + 36, b0 + 16 + 16, 116, 0);
-            this.drawImage(this.pages[currPage].icons[0], 270, 70, 90, 90);
+            
+            if(this.pages[currPage].icons.length > 0){
+            this.drawImage(this.pages[currPage].icons[0], 290, 120, 48, 48);
+            
+            }
             
         super.drawScreen(par1, par2, par3);
     }

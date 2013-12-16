@@ -17,7 +17,6 @@
 <page>
 
 <text>Once you have crafted a chisel, find a rune block in one of the Trogian grottos and strike it with your chisel. After a few moments of tapping, you will have extracted a rune.</text>
-<icon>runeBlock</icon>
 
 </page>
 
@@ -37,7 +36,6 @@
 <page>
 
 <text>On your travels among the Trogian ruins, you may also find a moss-like plant called Lichen. This was the main food source of the Trogians (hence their fabled bad breath) and can be cooked to an even more repulsive nut nutritionous bit of salad.</text>
-<icon>recipeCookedMoss</icon>
 
 </page>
 
