@@ -2,13 +2,15 @@ package com.vivalux.sbt.lib;
 
 import java.util.ArrayList;
 
+import net.minecraft.world.World;
+
 public class MushroomList {
     
     private static ArrayList<Coord> mushrooms = new ArrayList<Coord>();
     
-    public static void addMushroomAt(int x, int y, int z){
+    public static void addMushroomAt(World world, int x, int y, int z){
 	
-	mushrooms.add(new Coord(x, y, z));
+	mushrooms.add(new Coord(world, x, y, z));
 	
     }
     
@@ -32,9 +34,9 @@ public class MushroomList {
 		
     }
     
-    public static void removeMushroomAt(int x, int y, int z){
+    public static void removeMushroomAt(World world, int x, int y, int z){
 	
-	Coord coord = new Coord(x, y, z);
+	Coord coord = new Coord(world, x, y, z);
 	
 	removeMushroomAt(coord);
 	

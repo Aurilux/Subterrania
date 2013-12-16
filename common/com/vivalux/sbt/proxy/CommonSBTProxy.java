@@ -3,10 +3,14 @@ package com.vivalux.sbt.proxy;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
-import cpw.mods.fml.client.FMLClientHandler;
+
+import com.vivalux.sbt.gui.book.Book;
+
 import cpw.mods.fml.common.network.IGuiHandler;
 
 public class CommonSBTProxy implements IGuiHandler {
+    
+    public static Book runebook;
 
     public void initRenderers() {
     }
@@ -27,5 +31,11 @@ public class CommonSBTProxy implements IGuiHandler {
 
 	return null;
 
+    }
+    
+    public void readBooks(){
+	
+	
+	
     }
 }

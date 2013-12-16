@@ -42,8 +42,7 @@ public class BlockGlowingMushroom extends BlockMushroom {
     @Override
     public void onBlockAdded(World par1World, int par2, int par3, int par4) {
 	
-	MushroomList.addMushroomAt(par2, par3, par4);
-	Log.debug("added mush");
+	MushroomList.addMushroomAt(par1World, par2, par3, par4);
 	
     }
     
@@ -52,9 +51,8 @@ public class BlockGlowingMushroom extends BlockMushroom {
     {
         super.breakBlock(par1World, par2, par3, par4, par5, par6);
         
-        MushroomList.removeMushroomAt(par2, par3, par4);
-        
-        Log.debug("removed mush");
+        MushroomList.removeMushroomAt(par1World, par2, par3, par4);
+            
     }
 
 }

@@ -7,11 +7,11 @@ import net.minecraftforge.common.MinecraftForge;
 
 import com.vivalux.sbt.block.SBT_Blocks;
 import com.vivalux.sbt.item.SBT_Items;
-import com.vivalux.sbt.lib.Log;
 import com.vivalux.sbt.lib.SBT_EventHandler;
 import com.vivalux.sbt.lib.SBT_OreDictionary;
 import com.vivalux.sbt.lib.SBT_Recipes;
 import com.vivalux.sbt.lib.SBT_Ref;
+import com.vivalux.sbt.proxy.ClientSBTProxy;
 import com.vivalux.sbt.proxy.CommonSBTProxy;
 
 import cpw.mods.fml.common.Mod;
@@ -22,6 +22,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = SBT_Ref.MOD_ID, name = SBT_Ref.MOD_NAME, version = SBT_Ref.MOD_VERSION)
@@ -47,8 +48,7 @@ public class Subterrania_ModBase {
 	SBT_Blocks.registerBlocks(config);
 	SBT_Items.registerItems(config);
 	SBT_Recipes.registerRecipes();
-
-	// I KEEP RUNNING THE WRONG MOD GRRRRRRRRR!!!!!!!!
+	proxy.readBooks();
     }
 
     @EventHandler
@@ -56,6 +56,9 @@ public class Subterrania_ModBase {
 	// register event handlers
 	// register tile entities and other rendering
 	MinecraftForge.EVENT_BUS.register(new SBT_EventHandler());
+	
+	ClientSBTProxy guiHandler = new ClientSBTProxy();
+	NetworkRegistry.instance().registerGuiHandler(this, guiHandler);
     }
 
     @EventHandler

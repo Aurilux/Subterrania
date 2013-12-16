@@ -9,7 +9,7 @@ public class SBT_EventHandler {
     @ForgeSubscribe
     public void onSpawn(CheckSpawn event){
 		
-	Coord coord = new Coord((int)event.x,(int) event.y, (int)event.z);
+	Coord coord = new Coord(event.world, (int)event.x,(int) event.y, (int)event.z);
 		
 	if(MushroomList.inRangeOfMushroom(coord, 10)){
 	    	    		
