@@ -3,10 +3,12 @@ package com.vivalux.sbt;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
+import net.minecraftforge.common.MinecraftForge;
 
 import com.vivalux.sbt.block.SBT_Blocks;
 import com.vivalux.sbt.item.SBT_Items;
 import com.vivalux.sbt.lib.Log;
+import com.vivalux.sbt.lib.SBT_EventHandler;
 import com.vivalux.sbt.lib.SBT_OreDictionary;
 import com.vivalux.sbt.lib.SBT_Recipes;
 import com.vivalux.sbt.lib.SBT_Ref;
@@ -53,6 +55,7 @@ public class Subterrania_ModBase {
     public void init(FMLInitializationEvent e) {
 	// register event handlers
 	// register tile entities and other rendering
+	MinecraftForge.EVENT_BUS.register(new SBT_EventHandler());
     }
 
     @EventHandler
