@@ -1,0 +1,49 @@
+<book>
+
+<page>
+
+<text>The Trogian Explorer's Guide</text>
+<icon>rune</icon>
+
+</page>
+
+<page>
+
+<text>The first bit of equipment any Trogian explorer needs is a chisel. The chisel can be used to break rune blocks and extract the precious Trogian runes from them.</text>
+<icon>recipeChisel</icon>
+
+</page>
+
+<page>
+
+<text>Once you have crafted a chisel, find a rune block in one of the Trogian grottos and strike it with your chisel. After a few moments of tapping, you will have extracted a rune.</text>
+
+</page>
+
+<page>
+
+<text>When these runes are thrown to the ground, the thrower feels a suden jolt of increased knowledge and capability.</text>
+
+</page>
+
+<page>
+
+<text>You may also find some Foxfire Fungus. These were used by the trogians as a light source and protection against monsters, since their spores are poisonous to all those that are undead.</text>
+<icon>fungus</icon>
+
+</page>
+
+<page>
+
+<text>On your travels among the Trogian ruins, you may also find a moss-like plant called Lichen. This was the main food source of the Trogians (hence their fabled bad breath) and can be cooked to an even more repulsive nut nutritionous bit of salad.</text>
+
+</page>
+
+<page>
+
+<text>If you should ever decide that you should need an extra copy of this guide, surround an unscribed book in runes and the runic magic will bind to the book, producing an exact copy of this one.</text>
+<icon>recipeRuneBook</icon>
+
+</page>
+
+</book>

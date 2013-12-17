@@ -23,7 +23,7 @@ public class SBT_Items {
     public static final String CHISEL_NAME_LOWER = "runeChisel";
 
     public static ItemRuneBook book;
-    public static final String BOOK_NAME = "Book of Trogian Runes";
+    public static final String BOOK_NAME = "The Trogian Explorer's Guide";
     public static final String BOOK_NAME_LOWER = "runeBook";
 
     public static int itemID = 700;

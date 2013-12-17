@@ -9,6 +9,7 @@ import cpw.mods.fml.common.FMLLog;
 public class Log {
 
     private static Logger logger;
+    private static boolean debug = true;
 
     private static void init() {
 
