@@ -28,11 +28,6 @@ public class SecretGarden extends WorldGenerator {
 
 	@Override
 	public boolean generate(World world, Random random, int x, int y, int z) {
-		//TODO remove testing stuff
-		//for testing purposes
-		x = 0;
-		y = 49;
-		z = 0;
 		
 		//determine the dimensions of the cave
 		int dimX = Math.min(minX + random.nextInt(maxX), maxX);
@@ -42,8 +37,7 @@ public class SecretGarden extends WorldGenerator {
 		//then determine if the location is applicable
 		int caveTop = y + dimY/2;
 		//make sure we are in a cold biome, a few blocks below sea level (64), but not too far below ground
-		if (doOnce && world.getBiomeGenForCoords(x, z).temperature > .6f && (caveTop <= 59 && caveTop >= 44)) {
-			doOnce = false; //when I remove this also be sure to change the temperature back
+		if (world.getBiomeGenForCoords(x, z).temperature < .4f && (caveTop <= 59 && caveTop >= 44)) {
 			//generate the overall shape of the cave, calculating from the center, adding dirt to the bottom 2-3 layers
 			for (int length = x + dimX/2; length > x - dimX/2; length--) {
 				for (int width = z + dimZ/2; width > z - dimZ/2; width--) {

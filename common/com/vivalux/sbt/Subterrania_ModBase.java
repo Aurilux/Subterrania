@@ -3,13 +3,16 @@ package com.vivalux.sbt;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
+import net.minecraftforge.common.MinecraftForge;
 
 import com.vivalux.sbt.block.SBT_Blocks;
 import com.vivalux.sbt.item.SBT_Items;
 import com.vivalux.sbt.lib.Log;
+import com.vivalux.sbt.lib.SBT_EventHandler;
 import com.vivalux.sbt.lib.SBT_OreDictionary;
 import com.vivalux.sbt.lib.SBT_Recipes;
 import com.vivalux.sbt.lib.SBT_Ref;
+import com.vivalux.sbt.lib.WorldGen;
 import com.vivalux.sbt.proxy.CommonSBTProxy;
 
 import cpw.mods.fml.common.Mod;
@@ -37,47 +40,43 @@ public class Subterrania_ModBase {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent e) {
-	// initialize enum additions, localization, and load configuration
-	// register enums, blocks, items, and entities
-	// register biomes, dimensions, and other world-gen
-	config = new Configuration(e.getSuggestedConfigurationFile());
-	setCreativeTab();
-	SBT_Blocks.registerBlocks(config);
-	SBT_Items.registerItems(config);
-	SBT_Recipes.registerRecipes();
-
-	// I KEEP RUNNING THE WRONG MOD GRRRRRRRRR!!!!!!!!
+		// initialize enum additions, localization, and load configuration
+		// register enums, blocks, items, and entities
+		// register biomes, dimensions, and other world-gen
+		config = new Configuration(e.getSuggestedConfigurationFile());
+		setCreativeTab();
+		SBT_Blocks.registerBlocks(config);
+		SBT_Items.registerItems(config);
+		SBT_Recipes.registerRecipes();
+		WorldGen.init();
     }
 
     @EventHandler
     public void init(FMLInitializationEvent e) {
-	// register event handlers
-	// register tile entities and other rendering
+		// register event handlers
+		// register tile entities and other rendering
+	    MinecraftForge.EVENT_BUS.register(new SBT_EventHandler());
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent e) {
-	SBT_OreDictionary.setOres();
-	for (ItemStack stack : SBT_OreDictionary.ores) {
-
-	    System.out.println(stack.toString());
-
-	}
+		SBT_OreDictionary.setOres();
+		for (ItemStack stack : SBT_OreDictionary.ores) {
+	
+		    System.out.println(stack.toString());
+	
+		}
     }
 
     private static void setCreativeTab() {
-
-	tab = new CreativeTabs(SBT_Ref.MOD_ID) {
-
-	    @Override
-	    public ItemStack getIconItemStack() {
-		return new ItemStack(SBT_Blocks.mushroom);
-	    }
-
-	};
-	LanguageRegistry.instance().addStringLocalization(
-		"itemGroup." + SBT_Ref.MOD_ID, SBT_Ref.MOD_NAME);
-
+		tab = new CreativeTabs(SBT_Ref.MOD_ID) {
+	
+		    @Override
+		    public ItemStack getIconItemStack() {
+			return new ItemStack(SBT_Blocks.mushroom);
+		    }
+	
+		};
+		LanguageRegistry.instance().addStringLocalization("itemGroup." + SBT_Ref.MOD_ID, SBT_Ref.MOD_NAME);
     }
-
 }

@@ -2,19 +2,14 @@ package com.vivalux.sbt.worldgen;
 
 import java.util.Random;
 
-import com.vivalux.sbt.block.SBT_Blocks;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockMushroom;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.passive.EntityChicken;
-import net.minecraft.entity.passive.EntityCow;
-import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.entity.passive.EntityMooshroom;
-import net.minecraft.entity.passive.EntityPig;
-import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+
+import com.vivalux.sbt.block.SBT_Blocks;
 
 public class MushroomCave extends WorldGenerator {
 	
@@ -27,17 +22,9 @@ public class MushroomCave extends WorldGenerator {
 	private final int maxX = 40;
 	private final int maxY = 10;
 	private final int maxZ = 40;
-	
-	private boolean doOnce = true;
 
 	@Override
 	public boolean generate(World world, Random random, int x, int y, int z) {
-		//TODO remove testing stuff
-		//for testing purposes
-		x = 0;
-		y = 49;
-		z = 0;
-		
 		//determine the dimensions of the cave
 		int dimX = Math.min(minX + random.nextInt(maxX), maxX);
 		int dimY = Math.min(minY + random.nextInt(maxY), maxY);
@@ -46,8 +33,7 @@ public class MushroomCave extends WorldGenerator {
 		//then determine if the location is applicable
 		int caveTop = y + dimY/2;
 		//make sure we are in a humid biome, a few blocks below sea level (64), but not too far below ground
-		if (doOnce && world.getBiomeGenForCoords(x, z).temperature > .6f && (caveTop <= 59 && caveTop >= 44)) {
-			doOnce = false; //when I remove this also be sure to change the temperature back
+		if (world.getBiomeGenForCoords(x, z).rainfall > .6f && (caveTop <= 59 && caveTop >= 44)) {
 			//generate the overall shape of the cave, calculating from the center, adding dirt to the bottom 2-3 layers
 			for (int length = x + dimX/2; length > x - dimX/2; length--) {
 				for (int width = z + dimZ/2; width > z - dimZ/2; width--) {

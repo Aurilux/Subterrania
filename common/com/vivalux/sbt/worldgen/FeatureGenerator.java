@@ -9,10 +9,12 @@ import cpw.mods.fml.common.IWorldGenerator;
 
 public class FeatureGenerator implements IWorldGenerator {
 
-    private WorldGenerator grotto = new Grotto();
+    private WorldGenerator grotto       = new Grotto();
     private WorldGenerator secretGarden = new SecretGarden();
     private WorldGenerator mushroomCave = new MushroomCave();
     private WorldGenerator magmaChamber = new MagmaChamber();
+    private WorldGenerator earthCyst    = new EarthCyst();
+    private WorldGenerator testGen      = new TestGen();
 
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
@@ -35,16 +37,41 @@ public class FeatureGenerator implements IWorldGenerator {
 		int randZ = 0;
 	
 		// Grotto generation
-		grotto.generate(world, random, randX, randY, randZ);
+		randX = x + random.nextInt(8);
+		randY = random.nextInt(128);
+		randZ = z + random.nextInt(8);
+		//grotto.generate(world, random, randX, randY, randZ);
 	
 		// Secret Garden generation
+		randX = x + random.nextInt(8);
+		randY = random.nextInt(128);
+		randZ = z + random.nextInt(8);
 		secretGarden.generate(world, random, randX, randY, randZ);
 	
 		// Mushroom Cave generation
-		//mushroomCave.generate(world, random, randX, randY, randZ);
+		randX = x + random.nextInt(8);
+		randY = random.nextInt(128);
+		randZ = z + random.nextInt(8);
+		mushroomCave.generate(world, random, randX, randY, randZ);
 	
 		// Magma Chamber generation
+		randX = x + random.nextInt(8);
+		randY = random.nextInt(128);
+		randZ = z + random.nextInt(8);
 		magmaChamber.generate(world, random, randX, randY, randZ);
+		
+		// Earth Cyst generation
+		randX = x + random.nextInt(8);
+		randY = random.nextInt(256);
+		randZ = z + random.nextInt(8);
+		earthCyst.generate(world, random, randX, randY, randZ);
+		
+		/*
+		randX = x + random.nextInt(8);
+		randY = random.nextInt(128);
+		randZ = z + random.nextInt(8);
+		testGen.generate(world, random, randX, randY, randZ);
+		*/
     }
 
     private void generateEnd(World world, Random random, int x, int z) {
