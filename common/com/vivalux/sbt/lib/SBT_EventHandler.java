@@ -5,7 +5,7 @@ import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent.CheckSpawn;
 
 public class SBT_EventHandler {
-    
+
     @ForgeSubscribe
     public void onSpawn(CheckSpawn event){
 		
@@ -18,5 +18,4 @@ public class SBT_EventHandler {
 	}
 		
     }
-
 }

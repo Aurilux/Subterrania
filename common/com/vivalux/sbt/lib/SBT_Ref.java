@@ -17,4 +17,5 @@ public class SBT_Ref {
     public static final String SERVER_PROXY = "com.vivalux.sbt.proxy.CommonSBTProxy";
     
     public static final int GUI_RUNEBOOK_ID = 1;
+
 }

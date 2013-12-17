@@ -9,6 +9,12 @@ import net.minecraft.world.World;
 import com.vivalux.sbt.Subterrania_ModBase;
 import com.vivalux.sbt.lib.SBT_Ref;
 
+import com.vivalux.sbt.Subterrania_ModBase;
+import com.vivalux.sbt.lib.SBT_Ref;
+
+import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.item.ItemBook;
+
 public class ItemRuneBook extends ItemBook {
 
     String name;
@@ -35,5 +41,4 @@ public class ItemRuneBook extends ItemBook {
 	
         return par1ItemStack;
     }
-
 }

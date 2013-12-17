@@ -15,10 +15,11 @@ public class Coord {
      * @param z
      */
     public Coord(World world, int x, int y, int z) {
-	super();
+
 	this.x = x;
 	this.y = y;
 	this.z = z;
+	this.world = world;
     }
     /**
      * @return the x
@@ -44,13 +45,14 @@ public class Coord {
 	return this.world;
 	
     }
-    
+
     @Override
     public boolean equals(Object obj){
 	
 	if(obj instanceof Coord){
 	    
 	    return (((Coord) obj).getX() ==  this.getX() && ((Coord) obj).getY() == this.getY() && ((Coord) obj).getZ() == this.getZ() && ((Coord) obj).getWorld() == this.getWorld());
+
 					    
 	}
 	

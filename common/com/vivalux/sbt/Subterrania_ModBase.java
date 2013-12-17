@@ -11,6 +11,7 @@ import com.vivalux.sbt.lib.SBT_EventHandler;
 import com.vivalux.sbt.lib.SBT_OreDictionary;
 import com.vivalux.sbt.lib.SBT_Recipes;
 import com.vivalux.sbt.lib.SBT_Ref;
+import com.vivalux.sbt.lib.WorldGen;
 import com.vivalux.sbt.proxy.ClientSBTProxy;
 import com.vivalux.sbt.proxy.CommonSBTProxy;
 
@@ -40,15 +41,16 @@ public class Subterrania_ModBase {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent e) {
-	// initialize enum additions, localization, and load configuration
-	// register enums, blocks, items, and entities
-	// register biomes, dimensions, and other world-gen
-	config = new Configuration(e.getSuggestedConfigurationFile());
-	setCreativeTab();
-	SBT_Blocks.registerBlocks(config);
-	SBT_Items.registerItems(config);
-	SBT_Recipes.registerRecipes();
-	proxy.readBooks();
+
+		// initialize enum additions, localization, and load configuration
+		// register enums, blocks, items, and entities
+		// register biomes, dimensions, and other world-gen
+		config = new Configuration(e.getSuggestedConfigurationFile());
+		setCreativeTab();
+		SBT_Blocks.registerBlocks(config);
+		SBT_Items.registerItems(config);
+		SBT_Recipes.registerRecipes();
+		WorldGen.init();
     }
 
     @EventHandler
@@ -59,16 +61,6 @@ public class Subterrania_ModBase {
 	
 	ClientSBTProxy guiHandler = new ClientSBTProxy();
 	NetworkRegistry.instance().registerGuiHandler(this, guiHandler);
-    }
-
-    @EventHandler
-    public void postInit(FMLPostInitializationEvent e) {
-	SBT_OreDictionary.setOres();
-	for (ItemStack stack : SBT_OreDictionary.ores) {
-
-	    System.out.println(stack.toString());
-
-	}
     }
 
     private static void setCreativeTab() {
@@ -86,4 +78,13 @@ public class Subterrania_ModBase {
 
     }
 
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent e) {
+		SBT_OreDictionary.setOres();
+		for (ItemStack stack : SBT_OreDictionary.ores) {
+	
+		    System.out.println(stack.toString());
+	
+		}
+    }
 }
